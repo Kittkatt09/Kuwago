@@ -1,0 +1,349 @@
+/* HOME PAGE */
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 640px;
+  background: var(--cream);
+}
+
+.hero-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.85);
+  transition: transform 0.8s ease;
+}
+
+.hero-image:hover img {
+  transform: scale(1.03);
+}
+
+.hero-content {
+  padding: 80px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #FAF6EE 0%, #F0E6C8 100%);
+}
+
+.hero-eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--amber);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.1;
+  margin-bottom: 24px;
+
+}
+
+.hero-title span {
+  color: var(--amber);
+  display: inline-block;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.hero-title span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--amber);
+}
+
+.hero-desc {
+  font-size: 16px;
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 850px;
+  text-align: justify;
+}
+
+.hero-btn {
+  background: var(--amber);
+  color: var(--white);
+  padding: 14px 44px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.25s;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(180, 115, 51, 0.25);
+  text-align: center;
+  width: 350px;
+}
+
+.hero-btn:hover {
+  background: #965D28;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(180, 115, 51, 0.4);
+}
+
+/* CATEGORY CARDS */
+.categories {
+  margin: 100px 48px 52px;
+  padding: 52px 48px;
+  background: var(--cream);
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--amber);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.category-card {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+  text-decoration: none;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 32px var(--shadow);
+}
+
+.category-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.category-card:hover .category-img {
+  transform: scale(1.08);
+}
+
+.category-placeholder {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(135deg, #DDD3BA 0%, #C9BC9F 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.category-label {
+  text-align: center;
+  padding: 14px 12px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  background: var(--card-bg);
+}
+
+/* PROMO BANNER */
+.promo-banner {
+  position: relative;
+  margin: 100px 48px 52px;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 280px;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.promo-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 70% 50%, rgba(80, 200, 20, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 60%, rgba(200, 100, 10, 0.2) 0%, transparent 50%),
+    linear-gradient(135deg, #0A0804 0%, #1A1005 50%, #0A120A 100%);
+}
+
+
+.promo-content {
+  position: relative;
+  z-index: 2;
+  padding: 40px 52px;
+  flex: 1;
+}
+
+.promo-eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #6FCF2A;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.promo-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.1;
+  text-shadow: 0 0 40px rgba(110, 207, 42, 0.5), 0 2px 8px rgba(0, 0, 0, 0.8);
+  margin-bottom: 12px;
+}
+
+.promo-title span {
+  color: #6FCF2A;
+  text-shadow: 0 0 30px rgba(110, 207, 42, 0.8);
+}
+
+.promo-sub {
+  font-size: 14px;
+  color: #AAA;
+  margin-bottom: 24px;
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+.promo-btn {
+  background: #6FCF2A;
+  color: #0A0804;
+  padding: 11px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.25s;
+  display: inline-block;
+}
+
+.promo-btn:hover {
+  background: #82E033;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(111, 207, 42, 0.5);
+}
+
+.promo-drink {
+  position: relative;
+  z-index: 2;
+  padding: 20px 52px 20px 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.drink-cup {
+  font-size: 80px;
+  filter: drop-shadow(0 0 20px rgba(80, 220, 20, 0.6));
+  line-height: 1;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-image {
+    height: 250px;
+  }
+
+  .hero-content {
+    padding: 40px 24px;
+  }
+
+  .hero-title {
+    font-size: 40px;
+  }
+
+  .hero-desc {
+    max-width: 100%;
+  }
+
+  .categories {
+    padding: 40px 20px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .category-img {
+    height: 140px;
+  }
+
+  .promo-banner {
+    margin: 0 20px 40px;
+    flex-direction: column;
+    min-height: auto;
+    text-align: center;
+  }
+
+  .promo-content {
+    padding: 32px 24px;
+  }
+
+  .promo-title {
+    font-size: 36px;
+  }
+
+  .promo-sub {
+    margin: 0 auto 24px;
+  }
+
+  .promo-drink {
+    padding: 0 24px 32px;
+    justify-content: center;
+  }
+
+  .drink-cup {
+    font-size: 60px;
+  }
+}

@@ -1,0 +1,820 @@
+/* ACCOUNT PAGE STYLES */
+.account-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: calc(100vh - 60px);
+  background: var(--cream);
+}
+
+/* SIDEBAR */
+.account-sidebar {
+  background: var(--cream-light);
+  border-right: 1px solid var(--border);
+  padding: 36px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-profile {
+  text-align: center;
+  padding: 0 24px 28px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--amber-light), var(--amber-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  overflow: hidden;
+}
+
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sidebar-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 3px;
+}
+
+.sidebar-email {
+  font-size: 11.5px;
+  color: var(--text-light);
+}
+
+.sidebar-points {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  background: rgba(200, 134, 10, 0.12);
+  color: var(--amber-dark);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(200, 134, 10, 0.25);
+}
+
+.sidebar-points img {
+  width: 16px;
+  height: auto;
+  filter: brightness(0);
+  margin-right: 4px;
+}
+
+.sidebar-nav .nav-icon { 
+  width: 24px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-nav .nav-icon img {
+  width: 18px;
+  height: auto;
+  filter: brightness(0);
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.sidebar-nav a:hover .nav-icon img,
+.sidebar-nav a.active .nav-icon img {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
+.sidebar-section-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-light);
+  font-weight: 600;
+  padding: 0 24px;
+  margin-bottom: 8px;
+}
+
+.sidebar-nav { list-style: none; margin-bottom: 20px; }
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  text-decoration: none;
+  color: var(--text-mid);
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-nav a:hover { background: rgba(200, 134, 10, 0.07); color: var(--text-dark); }
+
+.sidebar-nav a.active {
+  background: rgba(200, 134, 10, 0.1);
+  color: var(--amber-dark);
+  border-left-color: var(--amber);
+  font-weight: 600;
+}
+
+.sidebar-nav .nav-icon { font-size: 15px; width: 20px; text-align: center; }
+
+.sidebar-logout { margin-top: auto; padding: 0 24px; }
+
+.btn-logout {
+  width: 100%;
+  padding: 9px;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-light);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-logout:hover {
+  border-color: #C0392B;
+  color: #C0392B;
+  background: rgba(192, 57, 43, 0.05);
+}
+
+/* ===== MAIN CONTENT ===== */
+.account-main { padding: 40px 52px; overflow-y: auto; }
+
+.account-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  padding-bottom: 20px;
+  border-bottom: 1.5px solid var(--border);
+}
+
+.account-page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.account-page-sub { font-size: 13px; color: var(--text-light); margin-top: 2px; }
+
+.btn-edit {
+  background: var(--amber);
+  color: var(--white);
+  padding: 9px 22px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-edit:hover {
+  background: var(--amber-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(200, 134, 10, 0.4);
+}
+
+.btn-edit img {
+  width: 14px;
+  height: auto;
+  filter: brightness(0) invert(1); 
+}
+
+/* FORM & SECTIONS */
+.form-section {
+  background: var(--cream-light);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+
+.form-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(200, 134, 10, 0.15);
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.form-row-3 {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 16px;
+}
+
+/* ORDER HISTORY */
+.order-list { list-style: none; }
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(212, 197, 169, 0.5);
+}
+
+.order-item:last-child { border-bottom: none; }
+
+.order-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--amber-light), var(--amber));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(200, 134, 10, 0.2);
+}
+
+.order-icon img {
+  width: 26px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.order-info { flex: 1; }
+
+.order-name { font-size: 14px; font-weight: 600; color: var(--text-dark); margin-bottom: 2px; }
+
+.order-date { font-size: 11.5px; color: var(--text-light); }
+
+.order-status {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-complete {
+  background: rgba(39, 174, 96, 0.12);
+  color: #27AE60;
+  border: 1px solid rgba(39, 174, 96, 0.25);
+}
+
+.status-pending {
+  background: rgba(200, 134, 10, 0.12);
+  color: var(--amber-dark);
+  border: 1px solid rgba(200, 134, 10, 0.3);
+}
+
+.order-price { font-size: 15px; font-weight: 700; color: var(--text-dark); margin-left: 12px; }
+
+/* POINTS CARD */
+.points-card {
+  background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown-mid) 100%);
+  border-radius: 12px;
+  padding: 32px;
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(44, 26, 14, 0.3);
+}
+
+.points-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--amber-light);
+  margin-bottom: 10px;
+}
+
+.points-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.points-sub { 
+  font-size: 14px; 
+  color: #A89880; 
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.points-sub img {
+  width: 20px;
+  height: auto;
+  filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(10deg);
+}
+
+
+.points-bar-wrap { margin-top: 20px; }
+
+.points-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: #A89880;
+  margin-bottom: 6px;
+}
+
+.points-bar { height: 6px; background: rgba(255, 255, 255, 0.15); border-radius: 3px; overflow: hidden; }
+
+.points-fill {
+  height: 100%;
+  width: 58%;
+  background: linear-gradient(90deg, var(--amber-light), var(--amber));
+  border-radius: 3px;
+  transition: width 1s ease;
+}
+
+/* PANE SWITCHING */
+.account-pane { display: none; }
+.account-pane.active { display: block; }
+
+/* PAYMENT MODAL */
+.payment-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  backdrop-filter: blur(4px);
+}
+
+.payment-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.payment-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.92);
+  width: 95%;
+  max-width: 480px;
+  max-height: 85vh;
+  background: var(--cream-light);
+  border-radius: 12px;
+  z-index: 2001;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.payment-modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.payment-modal-header {
+  padding: 24px 28px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.payment-modal-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--text-dark);
+}
+
+.close-payment-modal-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: color 0.2s;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.close-payment-modal-btn:hover {
+  color: var(--text-dark);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.payment-modal-body {
+  padding: 24px 28px 28px;
+  overflow-y: auto;
+}
+
+.payment-modal-sub {
+  font-size: 13.5px;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+/* Payment Type Selection Cards */
+.payment-type-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.payment-type-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: var(--cream);
+}
+
+.payment-type-card:hover {
+  border-color: var(--amber);
+  background: rgba(200, 134, 10, 0.04);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+.payment-type-icon {
+  font-size: 28px;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, rgba(200, 134, 10, 0.1), rgba(229, 160, 32, 0.15));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.payment-type-info {
+  flex: 1;
+}
+
+.payment-type-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.payment-type-desc {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+
+.payment-type-arrow {
+  font-size: 18px;
+  color: var(--text-light);
+  transition: transform 0.2s, color 0.2s;
+}
+
+.payment-type-card:hover .payment-type-arrow {
+  transform: translateX(4px);
+  color: var(--amber);
+}
+
+/* Payment Form (Card / E-Wallet) */
+.payment-form {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.payment-form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+/* Saved payment method card */
+.saved-method-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  animation: slideDown 0.3s ease;
+}
+
+.saved-method-icon {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, rgba(200, 134, 10, 0.1), rgba(229, 160, 32, 0.15));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.saved-method-info {
+  flex: 1;
+}
+
+.saved-method-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.saved-method-detail {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+
+.remove-method-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-light);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.remove-method-btn:hover {
+  background: rgba(192, 57, 43, 0.08);
+  border-color: #C0392B;
+  color: #C0392B;
+}
+
+/* REWARDS GRID */
+.rewards-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 32px 0 16px;
+}
+
+.rewards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.reward-card {
+  background: var(--cream-light);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.reward-card:hover {
+  border-color: var(--amber);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+.reward-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.reward-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.reward-points {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--amber-dark);
+  margin-bottom: 16px;
+}
+
+.btn-redeem {
+  background: var(--amber);
+  color: var(--white);
+  border: none;
+  padding: 8px 0;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.btn-redeem:hover {
+  background: var(--amber-dark);
+}
+
+.btn-redeem:disabled {
+  background: #DDD3BA;
+  cursor: not-allowed;
+}
+
+/* REORDER BUTTON */
+.reorder-btn {
+  background: transparent;
+  color: var(--amber-dark);
+  border: 1px solid var(--amber);
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.reorder-btn:hover {
+  background: var(--amber);
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(200, 134, 10, 0.2);
+  transform: translateY(-1px);
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .account-layout {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .account-sidebar {
+    padding: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    background: var(--cream-light);
+    position: sticky;
+    top: 60px;
+    z-index: 100;
+  }
+
+  .sidebar-profile, .sidebar-section-label, .sidebar-logout {
+    display: none;
+  }
+
+  .account-sidebar > div {
+    padding: 0 !important;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    overflow-x: auto;
+    padding: 0 10px;
+    margin-bottom: 0;
+    -webkit-overflow-scrolling: touch;
+    gap: 0;
+  }
+
+  .sidebar-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar-nav li {
+    flex-shrink: 0;
+  }
+
+  .sidebar-nav a {
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    padding: 14px 16px;
+    white-space: nowrap;
+    font-size: 13px;
+  }
+
+  .sidebar-nav a .nav-icon {
+    display: none; /* Hide icons on mobile row to save space */
+  }
+
+  .sidebar-nav a.active {
+    background: transparent;
+    border-bottom-color: var(--amber);
+    color: var(--amber-dark);
+  }
+
+  .account-main {
+    padding: 24px 16px;
+  }
+
+  .account-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .account-page-title {
+    font-size: 22px;
+  }
+
+  .form-section {
+    padding: 20px 16px;
+  }
+
+  .form-row, .form-row-3 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .order-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 20px 0;
+  }
+
+  .order-info {
+    width: 100%;
+  }
+
+  .order-item > div:last-child {
+    width: 100%;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center !important;
+    margin-top: 4px;
+  }
+
+  .reorder-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .rewards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-type-card {
+    padding: 12px;
+  }
+
+  .payment-modal {
+    width: 90%;
+    max-height: 80vh;
+  }
+}
