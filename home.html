@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuwago Café — Home</title>
+  <meta name="description"
+    content="Welcome to Kuwago Café — your cozy corner for specialty coffee, hearty meals, and unforgettable snacks." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="icon" type="image/svg+xml" href="icons/Kuwago.svg">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="home.html" class="nav-logo">
+      <span class="nav-logo-icon"><img src="icons/Kuwago.svg" alt="Kuwago Logo"></span>
+      <div>
+        <span class="nav-logo-text">Kuwago</span>
+        <span class="nav-logo-sub">Café</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="home.html" class="active" id="nav-home">Home</a></li>
+      <li><a href="menu.html" id="nav-menu">Menu</a></li>
+      <li><a href="about.html" id="nav-about">About</a></li>
+      <li><a href="account.html" id="nav-account">Account</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="content-area">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-image">
+          <img src="images/home.jpg" alt="Kuwago Café interior" />
+        </div>
+        <div class="hero-content">
+          <div class="hero-eyebrow">Your Cozy Corner</div>
+          <h1 class="hero-title">Welcome to<br /><span>Kuwago Cafe</span></h1>
+          <p class="hero-desc">
+            The heart of student productivity. A cozy sanctuary designed to fuel late-night study sessions and creative
+            breakthroughs. Named after the owl, it's the go-to spot for campus "night owls" to grab a premium brew,
+            collaborate on projects, or find a quiet corner to recharge between classes.
+          </p>
+          <a href="menu.html" class="hero-btn" id="highlights-btn">ORDER NOW</a>
+        </div>
+      </section>
+
+      <!-- EXPLORE MENU -->
+      <section class="categories">
+        <h2 class="section-title">Explore Our Menu</h2>
+        <div class="category-grid">
+          <a href="menu.html#drinks" class="category-card" id="cat-drinks">
+            <img src="images/drinks.jpg" alt="Drinks" class="category-img">
+            <div class="category-label">Drinks</div>
+          </a>
+          <a href="menu.html#food" class="category-card" id="cat-meals">
+            <img src="images/meals.jpg" alt="Meals" class="category-img">
+            <div class="category-label">Meals</div>
+          </a>
+          <a href="menu.html#food" class="category-card" id="cat-snacks">
+            <img src="images/snacks.png" alt="Snacks" class="category-img">
+            <div class="category-label">Snacks</div>
+          </a>
+          <a href="menu.html#food" class="category-card" id="cat-desserts">
+            <img src="images/desserts.png" alt="Desserts" class="category-img">
+            <div class="category-label">Desserts</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- PROMO BANNER -->
+      <div class="promo-banner" id="halloween-banner">
+        <div class="promo-bg"></div>
+        <div class="promo-content">
+          <div class="promo-eyebrow">✦ Limited Time Offer</div>
+          <h2 class="promo-title">Happy Hall<span>o</span>ween</h2>
+          <p class="promo-sub">
+            Dare to sip our spine-chilling specials. Eerie brews and ghoulishly good desserts — only while the night
+            lasts.
+          </p>
+          <a href="menu.html#limited" class="promo-btn" id="order-now-btn">Order Now</a>
+        </div>
+        <div class="promo-drink">
+          <div class="drink-cup">🧃</div>
+          <div class="drink-cup" style="font-size:64px; margin-bottom:8px;">👻</div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <span class="footer-logo-img"><img src="icons/Kuwago.svg" alt="Kuwago Logo"></span>
+              <span class="footer-logo-text">Kuwago</span>
+            </div>
+            <p>Fueling the wise, right on campus.</p>
+            <address>
+              Arellano St., Dagupan City, Pangasinan<br />
+              kuwagocafe2022@gmail.com
+              <a href="https://www.facebook.com/kuwagocafe" target="_blank"><img src="icons/facebook_svgrepo.com.svg"
+                  alt="Facebook" class="footer-social-icon"></a>
+            </address>
+
+
+
+          </div>
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="menu.html">Menu</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="account.html">Account</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          © 2026 Kuwago Café. All rights reserved. &nbsp;·&nbsp; Designed by 12-ITEW-03 / Group 5
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script defer src="js/home.js"></script>
+</body>
+
+</html>

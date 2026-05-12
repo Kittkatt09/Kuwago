@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuwago Café — Menu</title>
+  <meta name="description"
+    content="Browse the full Kuwago Café menu — specialty coffees, hearty meals, and artisan snacks." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+  <link rel="icon" type="image/svg+xml" href="icons/Kuwago.svg">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="home.html" class="nav-logo">
+      <span class="nav-logo-icon"><img src="icons/Kuwago.svg" alt="Kuwago Logo"></span>
+      <div>
+        <span class="nav-logo-text">Kuwago</span>
+        <span class="nav-logo-sub">Café</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="home.html" id="nav-home">Home</a></li>
+      <li><a href="menu.html" class="active" id="nav-menu">Menu</a></li>
+      <li><a href="about.html" id="nav-about">About</a></li>
+      <li><a href="account.html" id="nav-account">Account</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="content-area">
+      <div class="menu-page">
+        <h1 class="menu-page-title"><span>Kuwago</span> Menu</h1>
+        <p class="menu-subtitle">Crafted with passion, served with warmth.</p>
+
+        <!-- TABS -->
+        <div class="tab-nav" role="tablist">
+          <button class="tab-btn active" role="tab" onclick="switchTab('drinks', this)" id="tab-drinks"
+            aria-selected="true">
+            Drinks
+          </button>
+          <button class="tab-btn" role="tab" onclick="switchTab('food', this)" id="tab-food" aria-selected="false">
+            Food
+          </button>
+          <button class="tab-btn" role="tab" onclick="switchTab('limited', this)" id="tab-limited"
+            aria-selected="false">
+            Limited Offers
+          </button>
+          <button class="tab-btn" role="tab" onclick="switchTab('budget', this)" id="tab-budget" aria-selected="false">
+            Budget Deals
+          </button>
+          <button class="tab-btn" role="tab" onclick="switchTab('favorites', this)" id="tab-favorites"
+            aria-selected="false">
+            Favorites
+          </button>
+
+          <div id="filter-container" class="filter-container"
+            style="margin-left: auto; align-self: center; padding-right: 16px;">
+            <select id="category-filter-drinks" onchange="filterCategory(this.value)"
+              style="padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--cream); color: var(--text-dark); font-family: 'Inter', sans-serif; font-size: 13.5px; font-weight: 500; cursor: pointer; outline: none; transition: border-color 0.2s;">
+              <option value="all">All Drinks</option>
+              <option value="coffee-based">Coffee Based (Hot or Iced)</option>
+              <option value="non-coffee">Non-Coffee</option>
+              <option value="iced-coffee">Iced Coffee Series</option>
+              <option value="frappuccino">Frappuccino</option>
+              <option value="matcha">Matcha Series</option>
+              <option value="milktea">Milktea Series</option>
+              <option value="fruit-tea">Fruit Tea Series</option>
+              <option value="cream-cheese">Cream Cheese Series</option>
+              <option value="yakult">Yakult Series</option>
+              <option value="beverage">Beverage</option>
+              <option value="add-ons">Add-ons</option>
+            </select>
+
+            <select id="category-filter-food" onchange="filterCategory(this.value)"
+              style="padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--cream); color: var(--text-dark); font-family: 'Inter', sans-serif; font-size: 13.5px; font-weight: 500; cursor: pointer; outline: none; transition: border-color 0.2s; display: none;">
+              <option value="all">All Food</option>
+              <option value="rice-meals">Rice Meals</option>
+              <option value="snacks">Snacks</option>
+              <option value="waff-owls">Waff-owls</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- TAB: DRINKS -->
+        <div class="tab-pane active" id="pane-drinks">
+          <div class="menu-grid">
+
+            <!-- Coffee Based -->
+            <div class="menu-category">
+              <div class="category-header">
+                <span class="cat-icon"><img src="icons/Coffee-bean.svg" alt=""></span>
+                <h3>Coffee Based (Hot or Iced)</h3>
+              </div>
+
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <span class="item-name">Cafe Americano</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱95</span>
+                    <span class="item-price">₱90</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Cafe Latte</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱95</span>
+                    <span class="item-price">₱110</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Cappuccino</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱100</span>
+                    <span class="item-price">₱110</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Caramel Macchiato</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱110</span>
+                    <span class="item-price">₱130</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Creamy Latte</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱115</span>
+                    <span class="item-price">₱130</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Cafe Mocha</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱95</span>
+                    <span class="item-price">₱120</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Spanish Latte</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱105</span>
+                    <span class="item-price">₱120</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">White Chocolate Mocha</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱110</span>
+                    <span class="item-price">₱130</span>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="category-header" style="margin-top: 24px;">
+                <span class="cat-icon"><img src="icons/cup.svg" alt=""></span>
+                <h3>Non-Coffee</h3>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <span class="item-name">Signature Chocolate</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱90</span>
+                    <span class="item-price">₱110</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Iced Coffee & Frappuccino -->
+            <div class="menu-category">
+              <div class="category-header">
+                <span class="cat-icon"><img src="icons/Coffee-bean.svg" alt=""></span>
+                <h3>Iced Coffee Series</h3>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <span class="item-name">Almond</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱110</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Hazelnut</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱110</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">French Vanilla</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱110</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Salted Caramel</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱110</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Strawberry</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱110</span>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="category-header" style="margin-top: 24px;">
+                <span class="cat-icon"><img src="icons/Milktea_Icon.svg" alt=""></span>
+                <h3>Frappuccino</h3>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <span class="item-name">Blended Hershey's</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱130</span>
+                    <span class="item-price">₱150</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Cookies & Cream</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱130</span>
+                    <span class="item-price">₱150</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Lover's Latte</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱130</span>
+                    <span class="item-price">₱150</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">French Vanilla</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱130</span>
+                    <span class="item-price">₱150</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Salted Caramel</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱130</span>
+                    <span class="item-price">₱150</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">White Chocolate Mocha</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱130</span>
+                    <span class="item-price">₱150</span>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="category-header" style="margin-top: 24px;">
+                <span class="cat-icon"><img src="icons/Milktea_Icon.svg" alt=""></span>
+                <h3>Matcha Series</h3>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <span class="item-name">Matcha Latte</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱90</span>
+                    <span class="item-price">₱110</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Matcha Espresso</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱100</span>
+                    <span class="item-price">₱120</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Matcha Strawberry</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱110</span>
+                    <span class="item-price">₱130</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="menu-section-divider">Teas & Refreshments</div>
+
+          <div class="menu-grid">
+
+            <!-- Milktea & Fruit Tea -->
+            <div class="menu-category">
+              <div class="category-header">
+                <span class="cat-icon"><img src="icons/Milktea_Icon.svg" alt=""></span>
+                <h3>Milktea Series</h3>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <span class="item-name">Cheese Cake</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱85</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Chocolate</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱85</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Dark Chocolate</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱85</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Okinawa</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱85</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Cookies & Cream</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱85</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Matcha</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱85</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Red Velvet</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱85</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Watermelon</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱85</span>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="category-header" style="margin-top: 24px;">
+                <span class="cat-icon"><img src="icons/fruits.svg" alt=""></span>
+                <h3>Fruit Tea Series</h3>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <span class="item-name">Lemon</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱85</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Mango</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱85</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Strawberry</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱85</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Lychee</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱85</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Blueberry</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱85</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Green Apple</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱85</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Passion Fruit</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱70</span>
+                    <span class="item-price">₱85</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Cream Cheese & Yakult -->
+            <div class="menu-category">
+              <div class="category-header">
+                <span class="cat-icon"><img src="icons/Milktea_Icon.svg" alt=""></span>
+                <h3>Cream Cheese Series</h3>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <span class="item-name">Cheese Cake CC</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱80</span>
+                    <span class="item-price">₱95</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Matcha CC</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱80</span>
+                    <span class="item-price">₱95</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Chocolate CC</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱80</span>
+                    <span class="item-price">₱95</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Cookies & Cream CC</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱80</span>
+                    <span class="item-price">₱95</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Dark Chocolate CC</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱80</span>
+                    <span class="item-price">₱95</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Okinawa CC</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱80</span>
+                    <span class="item-price">₱95</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Taro CC</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱80</span>
+                    <span class="item-price">₱95</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Watermelon CC</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱80</span>
+                    <span class="item-price">₱95</span>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="category-header" style="margin-top: 24px;">
+                <span class="cat-icon"><img src="icons/yakult.svg" alt=""></span>
+                <h3>Yakult Series</h3>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <span class="item-name">Blueberry Yakult</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱80</span>
+                    <span class="item-price">₱95</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Green Apple Yakult</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱80</span>
+                    <span class="item-price">₱95</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Lychee Yakult</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱80</span>
+                    <span class="item-price">₱95</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Passion Fruit Yakult</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱80</span>
+                    <span class="item-price">₱95</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="menu-section-divider">Other Beverages & Add-ons</div>
+
+          <div class="menu-grid">
+            <div class="menu-category">
+              <div class="category-header">
+                <span class="cat-icon"><img src="icons/Milktea_Icon.svg" alt=""></span>
+                <h3>Beverage</h3>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <span class="item-name">Blue Lemonade</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱35</span>
+                    <span class="item-price">₱45</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Red Iced Tea</span>
+                  <div class="item-price-group">
+                    <span class="item-price">₱35</span>
+                    <span class="item-price">₱45</span>
+                  </div>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Lemonade Pitcher</span>
+                  <span class="item-price">₱100</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Bottled Water</span>
+                  <span class="item-price">₱20</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="menu-category">
+              <div class="category-header">
+                <span class="cat-icon"><img src="icons/plus.svg" alt=""></span>
+                <h3>Add-ons</h3>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <span class="item-name">Espresso Shot</span>
+                  <span class="item-price">₱15</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Soy Milk</span>
+                  <span class="item-price">₱20</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Oat Milk</span>
+                  <span class="item-price">₱30</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB: FOOD -->
+        <div class="tab-pane" id="pane-food">
+          <div class="menu-grid">
+
+            <!-- Rice Meals -->
+            <div class="menu-category">
+              <div class="category-header">
+                <span class="cat-icon"><img src="icons/Meal.svg" alt=""></span>
+                <h3>Rice Meals</h3>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <span class="item-name">Tapsilog</span>
+                  <span class="item-price">₱95</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Tocilog</span>
+                  <span class="item-price">₱95</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Porksilog</span>
+                  <span class="item-price">₱100</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Cornsilog</span>
+                  <span class="item-price">₱110</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Spamsilog</span>
+                  <span class="item-price">₱115</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Chicken in a Plate</span>
+                  <span class="item-price">₱95</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Cheesy Chicken</span>
+                  <span class="item-price">₱105</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Chicken Curry</span>
+                  <span class="item-price">₱110</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Chicken Katsudon</span>
+                  <span class="item-price">₱110</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Pork Katsudon</span>
+                  <span class="item-price">₱120</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Pork Gyudon</span>
+                  <span class="item-price">₱120</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Snacks & Waff-owls -->
+            <div class="menu-category">
+              <div class="category-header">
+                <span class="cat-icon"><img src="icons/snacks.svg" alt=""></span>
+                <h3>Snacks</h3>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <span class="item-name">Fries (Cheese/BBQ/S&C)</span>
+                  <span class="item-price">₱60</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Potato Mojos</span>
+                  <span class="item-price">₱75</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Nachos</span>
+                  <span class="item-price">₱85</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Club House</span>
+                  <span class="item-price">₱110</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Combo K1 <span class="popular-badge">Special</span></span>
+                  <span class="item-price">₱280</span>
+                </li>
+              </ul>
+
+              <div class="category-header" style="margin-top: 24px;">
+                <span class="cat-icon"><img src="icons/waffle.svg" alt=""></span>
+                <h3>Waff-owls</h3>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <span class="item-name">Ham, Cheese & Egg</span>
+                  <span class="item-price">₱90</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Bacon, Cheese & Egg</span>
+                  <span class="item-price">₱90</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- TAB: LIMITED OFFERS -->
+        <div class="tab-pane" id="pane-limited">
+          <div class="menu-grid">
+            <div class="menu-category">
+              <div class="category-header">
+                <span class="cat-icon">🎃</span>
+                <h3>Halloween Specials</h3>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <span class="item-name">Poison Apple<span class="popular-badge">New</span></span>
+                  <span class="item-price">₱175</span>
+                </li>
+                <li class="menu-item">
+                  <span class="item-name">Witcher's Brew</span>
+                  <span class="item-price">₱169</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB: BUDGET DEALS -->
+        <div class="tab-pane" id="pane-budget">
+          <div class="deals-grid">
+            <div class="deal-card">
+              <div class="deal-icon"><img src="icons/Coffee-bean.svg" alt=""></div>
+              <div class="deal-name">Student Combo</div>
+              <div class="deal-desc">1 Iced Coffee + 1 Pandesal Toast<br />Show your school ID</div>
+              <div class="deal-original">₱185</div>
+              <div class="deal-price">₱139</div>
+            </div>
+            <div class="deal-card">
+              <div class="deal-icon"><img src="icons/Meal.svg" alt=""></div>
+              <div class="deal-name">Solo Lunch Set</div>
+              <div class="deal-desc">1 Main Dish + 1 Drink of your choice</div>
+              <div class="deal-original">₱245</div>
+              <div class="deal-price">₱199</div>
+            </div>
+            <div class="deal-card">
+              <div class="deal-icon"><img src="icons/waffle.svg" alt=""></div>
+              <div class="deal-name">Sweet Escape</div>
+              <div class="deal-desc">1 Frappe + 1 Pastry<br />Available 2–5 PM</div>
+              <div class="deal-original">₱210</div>
+              <div class="deal-price">₱169</div>
+            </div>
+            <div class="deal-card">
+              <div class="deal-icon"><img src="icons/handshake.svg" alt=""></div>
+              <div class="deal-name">BFF Bundle</div>
+              <div class="deal-desc">2 Drinks + 2 Snacks<br />Best with a friend!</div>
+              <div class="deal-original">₱390</div>
+              <div class="deal-price">₱299</div>
+            </div>
+            <div class="deal-card">
+              <div class="deal-icon"><img src="icons/sunrise.svg" alt=""></div>
+              <div class="deal-name">Morning Boost</div>
+              <div class="deal-desc">1 Espresso + 1 Croissant<br />Before 9 AM only</div>
+              <div class="deal-original">₱175</div>
+              <div class="deal-price">₱129</div>
+            </div>
+            <div class="deal-card">
+              <div class="deal-icon"><img src="icons/work.svg" alt=""></div>
+              <div class="deal-name">Work From Café</div>
+              <div class="deal-desc">2 Drinks (any) + Free WiFi<br />3-hour session</div>
+              <div class="deal-original">₱280</div>
+              <div class="deal-price">₱229</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB: FAVORITES -->
+        <div class="tab-pane" id="pane-favorites">
+          <div id="favorites-container" class="menu-grid">
+            <!-- Favorites injected here -->
+          </div>
+          <div id="favorites-empty-msg" class="cart-empty-msg" style="display: none; padding: 60px 0; font-size: 16px;">
+            <div style="font-size: 48px; margin-bottom: 16px;">⭐</div>
+            You haven't added any favorites yet.<br />Star some items to see them here!
+          </div>
+        </div>
+
+      </div><!-- /menu-page -->
+    </div><!-- /content-area -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="footer-logo-img"><img src="icons/Kuwago.svg" alt="Kuwago Logo"></span>
+            <span class="footer-logo-text">Kuwago</span>
+          </div>
+          <p>Fueling the wise, right on campus.</p>
+          <address>
+            Arellano St., Dagupan City, Pangasinan<br />
+            kuwagocafe2022@gmail.com
+            <a href="https://www.facebook.com/kuwagocafe" target="_blank"><img src="icons/facebook_svgrepo.com.svg"
+                alt="Facebook" class="footer-social-icon"></a>
+          </address>
+
+
+
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="account.html">Account</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Kuwago Café. All rights reserved. &nbsp;·&nbsp; Designed by 12-ITEW-03 / Group 5
+      </div>
+    </footer>
+    <!-- CART WIDGET -->
+    <div class="cart-widget" onclick="toggleCart()">
+      <div class="cart-icon">🛒</div>
+      <div class="cart-badge" id="cart-badge">0</div>
+    </div>
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-sidebar-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button class="close-cart-btn" onclick="toggleCart()">✕</button>
+      </div>
+      <div class="cart-items" id="cart-items">
+        <!-- Items injected by JS -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cart-total-price">₱0</span>
+        </div>
+        <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+      </div>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="checkout-overlay" id="checkout-overlay" onclick="closeCheckout(event)"></div>
+    <div class="checkout-modal" id="checkout-modal">
+      <div class="checkout-modal-header">
+        <h2>Checkout</h2>
+        <button class="close-checkout-btn" onclick="closeCheckout()">✕</button>
+      </div>
+
+      <div class="checkout-modal-body">
+        <!-- Order Summary -->
+        <div class="checkout-section">
+          <h3 class="checkout-section-title">
+            <span class="checkout-section-icon"></span>
+            Order Summary
+          </h3>
+          <div class="checkout-order-items" id="checkout-order-items">
+            <!-- Populated by JS -->
+          </div>
+          <div class="checkout-summary-row checkout-summary-total">
+            <span>Total</span>
+            <span id="checkout-total">₱0</span>
+          </div>
+          <div class="checkout-points-earned">
+            <span class="points-star"><img src="icons/stars.svg" alt="" style="width: 30px;"></span>
+            <span>You'll earn <strong id="checkout-points">0</strong> points from this order</span>
+            <span class="points-note">(₱10 = 1 pt)</span>
+          </div>
+        </div>
+
+        <!-- Delivery Details -->
+        <div class="checkout-section">
+          <h3 class="checkout-section-title">
+            <span class="checkout-section-icon"></span>
+            Delivery Details
+          </h3>
+          <div class="form-group">
+            <label class="form-label" for="customer-name">Customer's Name</label>
+            <input class="form-control" type="text" id="customer-name" placeholder="Enter your nickname" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="room-delivery">Room Delivery (Optional)</label>
+            <input class="form-control" type="text" id="room-delivery" placeholder="Enter room number (e.g., Room 302)">
+          </div>
+        </div>
+
+        <!-- Payment Method -->
+        <div class="checkout-section">
+          <h3 class="checkout-section-title">
+            <span class="checkout-section-icon"></span>
+            Payment Method
+          </h3>
+          <div class="payment-methods">
+            <label class="payment-option" id="payment-card">
+              <input type="radio" name="payment" value="card" onchange="showSavedMethods('card')">
+              <div class="payment-option-content">
+                <span class="payment-icon"><img src="icons/card.svg" alt="" style="width: 30px;"></span>
+                <div>
+                  <span class="payment-name">Card</span>
+                  <span class="payment-desc">Credit or Debit Card</span>
+                </div>
+              </div>
+              <span class="payment-check"></span>
+            </label>
+            <div class="saved-sub-options" id="card-sub-options" style="display:none;"></div>
+
+            <label class="payment-option" id="payment-ewallet">
+              <input type="radio" name="payment" value="ewallet" onchange="showSavedMethods('ewallet')">
+              <div class="payment-option-content">
+                <span class="payment-icon"><img src="icons/Gcash.svg" alt="" style="width: 30px;"></span>
+                <div>
+                  <span class="payment-name">GCash</span>
+                  <span class="payment-desc">Pay with GCash</span>
+                </div>
+              </div>
+              <span class="payment-check"></span>
+            </label>
+            <div class="saved-sub-options" id="ewallet-sub-options" style="display:none;"></div>
+
+            <label class="payment-option" id="payment-cash">
+              <input type="radio" name="payment" value="cash" onchange="hideSavedMethods()">
+              <div class="payment-option-content">
+                <span class="payment-icon"><img src="icons/money.svg" alt="" style="width: 30px;"></span>
+                <div>
+                  <span class="payment-name">Cash on Pickup/Delivery</span>
+                  <span class="payment-desc">Pay when you receive your order</span>
+                </div>
+              </div>
+              <span class="payment-check"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="checkout-modal-footer">
+        <div class="checkout-error" id="checkout-error" style="display:none;"></div>
+        <div class="checkout-footer-actions">
+          <button class="btn btn-outline checkout-back-btn" onclick="closeCheckout()">← Back to Cart</button>
+          <button class="btn btn-primary checkout-place-btn" id="place-order-btn" onclick="placeOrder()">Place
+            Order</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT DETAILS MODAL -->
+    <div class="product-modal-overlay" id="product-overlay" onclick="closeProductModal()"></div>
+    <div class="product-modal" id="product-modal">
+      <button class="product-modal-close" onclick="closeProductModal()">×</button>
+      <div class="product-modal-content">
+        <div class="product-modal-image">
+          <img src="images/drinks.jpg" alt="Product Image" id="modal-product-img">
+        </div>
+        <div class="product-modal-info">
+          <h2 id="modal-product-name">Product Name</h2>
+          <p class="product-modal-desc" id="modal-product-desc">
+            Premium blend of specialty coffee and fresh ingredients, crafted to perfection.
+          </p>
+          <button id="modal-fav-btn" class="modal-fav-btn">
+            <img src="icons/Empty-Star.svg" alt=""> Add to Favorites
+          </button>
+
+          <div class="product-modal-sizes" id="modal-product-sizes">
+            <!-- Sizes will be injected here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORDER SUCCESS MODAL -->
+    <div class="order-success-overlay" id="success-overlay"></div>
+    <div class="order-success-modal" id="success-modal">
+      <div class="success-icon">✓</div>
+      <h2 class="success-title">Order Placed!</h2>
+      <p class="success-msg">Thank you for your order. Your items are being prepared.</p>
+      <button class="btn btn-primary" onclick="closeSuccess()">Continue Browsing</button>
+    </div>
+
+  </div><!-- /page-wrapper -->
+
+  <script src="js/common.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+
+</html>

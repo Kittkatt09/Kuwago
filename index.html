@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuwago Café — Login</title>
+  <meta name="description"
+    content="Login to your Kuwago Café account to enjoy exclusive rewards, view your order history and manage your personal details." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="icon" type="image/svg+xml" href="icons/Kuwago.svg">
+</head>
+
+<body>
+  <div class="login-card">
+    <div class="login-logo">
+      <span class="login-logo-icon"><img src="icons/Kuwago.svg" alt=""></span>
+      <div class="login-logo-name">Kuwago</div>
+      <div class="login-logo-tagline">Café</div>
+    </div>
+
+    <div class="login-title">Login</div>
+    <hr class="login-divider" />
+
+    <form id="loginForm" action="home.html" method="get" onsubmit="return handleLogin(event)">
+      <div class="form-group">
+        <label class="form-label" for="username">Username</label>
+        <input class="form-control" type="text" id="username" name="username" placeholder="Enter your username" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <input class="form-control" type="password" id="password" name="password" placeholder="Enter your password" />
+      </div>
+
+      <a href="#" class="forgot-link">Forgot password?</a>
+
+      <button type="submit" class="btn-login" id="loginBtn">LOGIN</button>
+    </form>
+
+    <div class="social-divider">or continue with</div>
+
+    <div class="social-buttons">
+      <a href="#" class="social-btn" title="Login with Step S"><img src="icons/StepS.svg" alt="STEP S" style="width: 24px; height: 24px; object-fit: contain;"></a>
+    </div>
+
+    <div class="register-text">
+      Don't have an account? <a href="#">Register</a>
+    </div>
+  </div>
+
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      const btn = document.getElementById('loginBtn');
+      btn.textContent = 'Logging in...';
+      btn.style.opacity = '0.8';
+      setTimeout(() => {
+        window.location.href = 'home.html';
+      }, 700);
+    }
+  </script>
+</body>
+
+</html>

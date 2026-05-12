@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuwago Café — My Account</title>
+  <meta name="description"
+    content="Manage your Kuwago Café account — update personal information, view order history, and manage points." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/account.css" />
+  <link rel="icon" type="image/svg+xml" href="icons/Kuwago.svg">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="home.html" class="nav-logo">
+      <span class="nav-logo-icon"><img src="icons/Kuwago.svg" alt="Kuwago Logo"></span>
+      <div>
+        <span class="nav-logo-text">Kuwago</span>
+        <span class="nav-logo-sub">Café</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="home.html" id="nav-home">Home</a></li>
+      <li><a href="menu.html" id="nav-menu">Menu</a></li>
+      <li><a href="about.html" id="nav-about">About</a></li>
+      <li><a href="account.html" class="active" id="nav-account">Account</a></li>
+    </ul>
+  </nav>
+
+  <div class="account-layout">
+    <!-- SIDEBAR -->
+    <aside class="account-sidebar">
+      <div class="sidebar-profile">
+        <div class="avatar"><img src="images/profile.jpg" alt="Profile"></div>
+        <div class="sidebar-name">Group V</div>
+        <div class="sidebar-email">12-ITEW-03@gmail.com</div>
+        <div class="sidebar-points"><img src="icons/stars.svg" alt="star"> <span id="sidebar-points-val">0</span>
+          Points</div>
+
+      </div>
+      <div style="padding: 0 0 8px;">
+        <div class="sidebar-section-label">Group Account</div>
+        <ul class="sidebar-nav">
+          <li><a href="#" class="active" onclick="showPane('personal', this)"><span class="nav-icon"><img
+                  src="icons/profile.svg" alt=""></span> Personal
+              Information</a></li>
+          <li><a href="#" onclick="showPane('billing', this)"><span class="nav-icon"><img src="icons/money.svg"
+                  alt=""></span> Billing & Payments</a>
+          </li>
+          <li><a href="#" onclick="showPane('orders', this)"><span class="nav-icon"><img src="icons/box.svg"
+                  alt=""></span> Order History</a></li>
+          <li><a href="#" onclick="showPane('points', this)"><span class="nav-icon"><img src="icons/stars.svg"
+                  alt=""></span> Manage Points</a></li>
+        </ul>
+
+
+      </div>
+      <div class="sidebar-logout">
+        <button class="btn-logout" onclick="window.location.href='index.html'">← Log Out</button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="account-main">
+      <!-- PERSONAL INFO -->
+      <div class="account-pane active" id="pane-personal">
+        <div class="account-header">
+          <div>
+            <div class="account-page-title">Personal Information</div>
+            <div class="account-page-sub">Update your profile details and contact information</div>
+          </div>
+          <button class="btn-edit" id="edit-btn" onclick="toggleEdit()"><img src="icons/pencil.svg" alt="Edit">
+            Edit</button>
+
+        </div>
+        <div class="form-section">
+          <div class="form-section-title">Basic Details</div>
+
+
+          <div class="form-row" style="margin-bottom:16px;">
+            <div class="form-group">
+              <label class="form-label" for="fname">First Name</label>
+              <input class="form-control" type="text" id="fname" value="Jennie" disabled />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="lname">Last Name</label>
+              <input class="form-control" type="text" id="lname" value="Kim" disabled />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="dob">Date of Birth</label>
+              <input class="form-control" type="date" id="dob" value="2007-06-07" disabled />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input class="form-control" type="text" id="phone" value="+63 912 345 6789" disabled />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title">Address</div>
+
+
+          <div class="form-group" style="margin-bottom:16px;">
+            <label class="form-label" for="address">Street Address</label>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <select class="form-control" style="max-width:110px;" id="addr-type" disabled>
+                <option>Home</option>
+                <option>Work</option>
+                <option>Other</option>
+              </select>
+              <input class="form-control" type="text" id="address" value="Arellano St., Dagupan City, Pangasinan"
+                disabled />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="country">Country / Region</label>
+              <input class="form-control" type="text" id="country" value="Philippines" disabled />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="city">City</label>
+              <input class="form-control" type="text" id="city" value="Pangasinan" disabled />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title">Security</div>
+
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="email-field">Email Address</label>
+              <input class="form-control" type="email" id="email-field" value="12-ITEW-03@gmail.com" disabled />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="password-field">Password</label>
+              <input class="form-control" type="password" id="password-field" value="••••••••" disabled />
+            </div>
+          </div>
+        </div>
+
+        <div id="save-btn-wrap" style="display:none; text-align:right; margin-top:8px;">
+          <button class="btn btn-primary" onclick="saveInfo()" id="save-btn">Save Changes</button>
+        </div>
+      </div>
+
+      <!-- BILLING & PAYMENTS -->
+      <div class="account-pane" id="pane-billing">
+        <div class="account-header">
+          <div>
+            <div class="account-page-title">Billing & Payments</div>
+            <div class="account-page-sub">Manage your payment methods and billing address</div>
+          </div>
+        </div>
+        <div class="form-section">
+          <div class="form-section-title">Saved Methods</div>
+
+
+          <div id="saved-methods" style="display:flex; flex-direction:column; gap:12px;">
+            <div
+              style="display:flex; align-items:center; gap:16px; padding:16px; background:var(--cream); border:1px solid var(--border); border-radius:8px;">
+              <span style="font-size:28px;"><img src="icons/money.svg" alt="" style="width: 28px;"></span>
+
+              <div style="flex:1;">
+                <div style="font-weight:600; font-size:14px;">Cash on Pickup</div>
+                <div style="font-size:12px; color:var(--text-light);">Pay at the counter when you pick up your order
+                </div>
+              </div>
+            </div>
+            <div onclick="openPaymentModal()" id="add-payment-btn"
+              style="display:flex; align-items:center; justify-content:center; gap:8px; padding:16px; border:1.5px dashed var(--border); border-radius:8px; cursor:pointer; background:rgba(200,134,10,0.03); transition: all 0.2s;">
+              <span style="font-size:22px;"><img src="icons/plus.svg" alt="Add" style="width:20px;"></span>
+              <div style="font-size:13.5px; color:var(--text-light);">Add a new payment method</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADD PAYMENT METHOD MODAL -->
+      <div class="payment-modal-overlay" id="payment-modal-overlay" onclick="closePaymentModal(event)"></div>
+      <div class="payment-modal" id="payment-modal">
+        <div class="payment-modal-header">
+          <h2>Add Payment Method</h2>
+          <button class="close-payment-modal-btn" onclick="closePaymentModal()">✕</button>
+        </div>
+        <div class="payment-modal-body">
+          <p class="payment-modal-sub">Choose a payment method to add to your account.</p>
+
+          <div class="payment-type-options">
+            <!-- Card Option -->
+            <div class="payment-type-card" onclick="selectPaymentType('card')">
+              <div class="payment-type-icon"><img src="icons/card.svg" alt="" style="width: 40px;"></div>
+              <div class="payment-type-info">
+                <div class="payment-type-name">Card</div>
+                <div class="payment-type-desc">Credit or Debit Card</div>
+              </div>
+              <span class="payment-type-arrow">→</span>
+            </div>
+
+            <!-- E-Wallet Option -->
+            <div class="payment-type-card" onclick="selectPaymentType('ewallet')">
+              <div class="payment-type-icon"><img src="icons/Gcash.svg" alt=""></div>
+              <div class="payment-type-info">
+                <div class="payment-type-name">GCash</div>
+                <div class="payment-type-desc">Pay with GCash</div>
+              </div>
+              <span class="payment-type-arrow">→</span>
+            </div>
+          </div>
+
+          <!-- Card Form (hidden by default) -->
+          <div class="payment-form" id="form-card" style="display:none;">
+            <div class="payment-form-title">Card Details</div>
+            <div class="form-group">
+              <label class="form-label" for="card-name">Cardholder Name</label>
+              <input class="form-control" type="text" id="card-name" placeholder="Juan Dela Cruz" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="card-number">Card Number</label>
+              <input class="form-control" type="text" id="card-number" placeholder="•••• •••• •••• ••••"
+                maxlength="19" />
+            </div>
+            <div class="form-row" style="margin-bottom:0;">
+              <div class="form-group">
+                <label class="form-label" for="card-expiry">Expiry Date</label>
+                <input class="form-control" type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="card-cvv">CVV</label>
+                <input class="form-control" type="password" id="card-cvv" placeholder="•••" maxlength="4" />
+              </div>
+            </div>
+            <button class="btn btn-primary" style="width:100%; margin-top:20px;"
+              onclick="savePaymentMethod('card')">Save Card</button>
+          </div>
+
+          <!-- E-Wallet Form (hidden by default) -->
+          <div class="payment-form" id="form-ewallet" style="display:none;">
+            <div class="payment-form-title">GCash Details</div>
+            <div class="form-group">
+              <label class="form-label" for="ewallet-provider">Provider</label>
+              <select class="form-control" id="ewallet-provider">
+                <option value="GCash">GCash</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="ewallet-number">Mobile Number</label>
+              <input class="form-control" type="text" id="ewallet-number" placeholder="+63 9XX XXX XXXX" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="ewallet-name">Account Name</label>
+              <input class="form-control" type="text" id="ewallet-name" placeholder="Juan Dela Cruz" />
+            </div>
+            <button class="btn btn-primary" style="width:100%; margin-top:20px;"
+              onclick="savePaymentMethod('ewallet')">Save E-Wallet</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORDER HISTORY -->
+      <div class="account-pane" id="pane-orders">
+        <div class="account-header">
+          <div>
+            <div class="account-page-title">Order History</div>
+            <div class="account-page-sub">Review and track your previous orders</div>
+          </div>
+        </div>
+        <div class="form-section">
+          <ul class="order-list">
+            <li class="order-item">
+              <div class="order-icon"><img src="icons/Coffee-bean.svg" alt="Coffee Bean" style="width: 28px;"></div>
+
+              <div class="order-info">
+                <div class="order-name">Iced Caramel Macchiato</div>
+                <div class="order-date">Oct 24, 2026 · Order #KUW-2942</div>
+              </div>
+              <span class="order-status status-complete">Complete</span>
+              <div class="order-price">₱130</div>
+            </li>
+            <li class="order-item">
+              <div class="order-icon"><img src="icons/Meal.svg" alt="Meal" style="width: 28px;"></div>
+
+              <div class="order-info">
+                <div class="order-name">Pork Sisig with Rice</div>
+                <div class="order-date">Oct 20, 2026 · Order #KUW-2810</div>
+              </div>
+              <span class="order-status status-complete">Complete</span>
+              <div class="order-price">₱165</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- MANAGE POINTS -->
+      <div class="account-pane" id="pane-points">
+        <div class="account-header">
+          <div>
+            <div class="account-page-title">Manage Points</div>
+            <div class="account-page-sub">Check your balance and redeem exclusive rewards</div>
+          </div>
+        </div>
+        <div class="points-card">
+          <div class="points-label">Current Balance</div>
+          <div class="points-number" id="points-balance">0</div>
+          <div class="points-sub"><img src="icons/stars.svg" alt="stars" style="width: 28px;"> Owl Points Earned</div>
+
+          <div class="points-bar-wrap">
+            <div class="points-bar-label">
+              <span>Progress to Gold Status</span>
+              <span id="points-progress-text">0 / 1,000</span>
+            </div>
+            <div class="points-bar">
+              <div class="points-fill" id="points-fill-bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="rewards-section-title">Redeem Rewards</h3>
+        <div class="rewards-grid">
+          <!-- Reward 1 -->
+          <div class="reward-card">
+            <div class="reward-icon"><img src="icons/Coffee-bean.svg" alt=""></div>
+            <div class="reward-name">Free Coffee (Any Size)</div>
+            <div class="reward-points">50 Points</div>
+            <button class="btn-redeem" onclick="redeemReward('Free Coffee', 50)">Redeem</button>
+          </div>
+
+          <!-- Reward 2 -->
+          <div class="reward-card">
+            <div class="reward-icon"><img src="icons/waffle.svg" alt=""></div>
+            <div class="reward-name">Waffles</div>
+            <div class="reward-points">100 Points</div>
+            <button class="btn-redeem" onclick="redeemReward('Pastry Treat', 100)">Redeem</button>
+          </div>
+
+          <!-- Reward 3 -->
+          <div class="reward-card">
+            <div class="reward-icon"><img src="icons/voucher.svg" alt="" style="width: 30px;"></div>
+            <div class="reward-name">₱100 Discount Voucher</div>
+            <div class="reward-points">200 Points</div>
+            <button class="btn-redeem" onclick="redeemReward('₱100 Discount', 200)">Redeem</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="footer-logo-img"><img src="icons/Kuwago.svg" alt="Kuwago Logo"></span>
+          <span class="footer-logo-text">Kuwago</span>
+        </div>
+        <p>Fueling the wise, right on campus.</p>
+        <address>
+          Arellano St., Dagupan City, Pangasinan<br />
+          kuwagocafe2022@gmail.com
+          <a href="https://www.facebook.com/kuwagocafe" target="_blank"><img src="icons/facebook_svgrepo.com.svg"
+              alt="Facebook" class="footer-social-icon"></a>
+        </address>
+
+
+
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="account.html">Account</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Terms of Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Kuwago Café. All rights reserved. &nbsp;·&nbsp; Designed by 12-ITEW-03 / Group 5
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/account.js"></script>
+</body>
+
+</html>
